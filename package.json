@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "node lab1/main.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "prettier": "2.7.1"
   },
   "dependencies": {
+    "firebase": "^9.11.0",
     "jest": "^29.1.2"
   }
 }
