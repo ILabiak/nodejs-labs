@@ -6,7 +6,8 @@ module.exports = {
   "plugins": ["sonarjs"],
   "extends": ["plugin:sonarjs/recommended", "eslint:recommended", "prettier"],
   "parserOptions": {
-    "ecmaVersion": 2020
+    "ecmaVersion": 2020,
+    "sourceType": "module"
   },
   "globals": {
     "BigInt": true
