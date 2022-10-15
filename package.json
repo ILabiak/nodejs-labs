@@ -8,7 +8,7 @@
     "test": "jest",
     "lint": "npx eslint \"**/**.js\"",
     "build": "npm install && firebase login",
-    "start": "firebase emulators:start"
+    "run": "firebase emulators:start"
   },
   "repository": {
     "type": "git",
