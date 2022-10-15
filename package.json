@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest",
     "lint": "npx eslint \"**/**.js\"",
-    "build": "npm install && firebase login",
+    "build": "npm install && npm --prefix functions install && firebase login",
     "run": "firebase emulators:start"
   },
   "repository": {
