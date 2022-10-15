@@ -19,7 +19,6 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NODEJS_LAB_34049 }}'
           projectId: nodejs-lab-34049
-      - uses: actions/checkout@v3
   deploy_functions:
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
