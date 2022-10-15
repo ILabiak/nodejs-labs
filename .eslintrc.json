@@ -1,10 +1,11 @@
 {
     "env": {
+      "jest/globals": true,
       "es6": true,
       "node": true
     },
-    "plugins": ["sonarjs"],
-    "extends": ["plugin:sonarjs/recommended", "eslint:recommended", "prettier"],
+    "plugins": ["sonarjs", "jest"],
+    "extends": ["plugin:sonarjs/recommended", "eslint:recommended", "prettier", "plugin:jest/recommended"],
     "parserOptions": {
       "ecmaVersion": 2020,
       "sourceType": "module"

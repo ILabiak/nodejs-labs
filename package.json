@@ -5,7 +5,8 @@
   "main": "functions/index.js",
   "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "npx eslint \"**/**.js\""
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^27.1.2",
     "eslint-plugin-sonarjs": "^0.16.0",
     "firebase": "^9.11.0",
     "firebase-functions": "^3.24.1",
