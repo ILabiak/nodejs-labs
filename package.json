@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "lint": "npx eslint \"**/**.js\""
+    "lint": "npx eslint \"**/**.js\"",
+    "build": "npm install && firebase login",
+    "start": "firebase emulators:start"
   },
   "repository": {
     "type": "git",
