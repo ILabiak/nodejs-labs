@@ -1,27 +1,29 @@
 name: Deploy hosting and functions on PR
+
 on:
   pull_request:
-    branches: ['main']
+    branches:
+      - main
+
 jobs:
-  deploy_hosting:
+  deploy_hosting_and_functions:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x]
     steps:
       - uses: actions/checkout@v3
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Deploy hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NODEJS_LAB_34049 }}'
           projectId: nodejs-lab-34049
-  deploy_functions:
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x]
-    steps:
-      - uses: actions/checkout@v3
-      - run: npx firebase deploy --token ${{ secrets.GCLOUD_TOKEN }} --only functions
+
+      - name : Deploy functions
+        run: |
+          npm ci && npm --prefix functions ci
+          npx firebase deploy --token ${{ secrets.GCLOUD_TOKEN }} --only functions
