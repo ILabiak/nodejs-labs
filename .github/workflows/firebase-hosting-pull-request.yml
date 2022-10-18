@@ -23,7 +23,22 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NODEJS_LAB_34049 }}'
           projectId: nodejs-lab-34049
 
+      - name: Cache node modules
+        id: cache-nodemodules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Install Dependencies (to deploy functions)
+        if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+        run: npm ci && npm --prefix functions ci
+
       - name : Deploy functions
-        run: |
-          npm ci && npm --prefix functions ci
-          npx firebase deploy --token ${{ secrets.GCLOUD_TOKEN }} --only functions
+        run: npx firebase deploy --token ${{ secrets.GCLOUD_TOKEN }} --only functions
