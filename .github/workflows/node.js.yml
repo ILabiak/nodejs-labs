@@ -36,7 +36,7 @@ jobs:
       - name: Run eslint
         run: npm run lint
 
-      - name: Run format
+      - name: Run prettier
         run: npm run format
 
       - name: Runtests
