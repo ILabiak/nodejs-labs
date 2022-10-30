@@ -16,14 +16,16 @@
   ],
   "hosting": {
     "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [ {
-      "source": "/hello",
-      "function": "helloWorld"
-    } ]
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "/api/hello",
+        "function": "helloWorld"
+      },
+      {
+        "source": "**",
+        "destination": "index.html"
+      }
+    ]
   }
 }

@@ -16,13 +16,6 @@ jobs:
         with:
           node-version: 16
 
-      - name: Deploy hosting
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NODEJS_LAB_34049 }}'
-          projectId: nodejs-lab-34049
-
       - name: Cache node modules
         id: cache-nodemodules
         uses: actions/cache@v3
@@ -41,4 +34,4 @@ jobs:
         run: npm ci && npm --prefix functions ci
 
       - name : Deploy functions
-        run: npx firebase deploy --token ${{ secrets.GCLOUD_TOKEN }} --only functions
+        run: npm run deploy:token ${{ secrets.GCLOUD_TOKEN }}

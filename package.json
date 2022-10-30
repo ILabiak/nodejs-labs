@@ -6,10 +6,18 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "lint": "npx eslint \"**/**.js\"",
-    "build": "npm install && npm --prefix functions install && firebase login",
+    "lint": "npm run --workspaces --if-present lint",
+    "lint:fix": "npm run --workspaces --if-present lint:fix",
+    "format": "npm run --workspaces --if-present format",
+    "format:fix": "npm run --workspaces --if-present format:fix",
+    "build": "npm run --workspaces --if-present build",
+    "deploy": "firebase deploy",
+    "deploy:token": "firebase deploy --token",
     "run": "firebase emulators:start"
   },
+  "workspaces":[
+    "functions"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ILabiak/nodejs-labs.git"
