@@ -31,7 +31,7 @@ jobs:
 
       - name: Install Dependencies (to deploy functions)
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
-        run: npm ci && npm --prefix functions ci
+        run: npm ci
 
       - name : Deploy functions
         run: npm run deploy:token ${{ secrets.GCLOUD_TOKEN }}
