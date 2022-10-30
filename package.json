@@ -17,7 +17,7 @@
     "preview:token": "firebase hosting:channel:deploy preview --expires 30d --token",
     "run": "firebase emulators:start"
   },
-  "workspaces":[
+  "workspaces": [
     "functions"
   ],
   "repository": {

@@ -31,9 +31,8 @@ jobs:
       - name: Install Dependencies
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: |
-          npm ci
+          npm ci --workspaces
 
-      - name: Run eslint and tests
+      - name: Run eslint, format and tests
         run: |
-          npm run lint
-          npm run test
+          npm run lint && npm run format && npm run test
