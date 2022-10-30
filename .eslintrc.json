@@ -5,7 +5,7 @@
       "node": true
     },
     "plugins": ["sonarjs", "jest"],
-    "extends": ["plugin:sonarjs/recommended", "eslint:recommended", "prettier", "plugin:jest/recommended"],
+    "extends": ["plugin:sonarjs/recommended", "eslint:recommended", "plugin:jest/recommended", "prettier"],
     "parserOptions": {
       "ecmaVersion": 2020,
       "sourceType": "module"
