@@ -19,12 +19,8 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
-        "source": "/api/hello",
-        "function": "helloWorld"
-      },
-      {
-        "source": "**",
-        "destination": "index.html"
+        "source": "/**",
+        "function": "router"
       }
     ]
   }
