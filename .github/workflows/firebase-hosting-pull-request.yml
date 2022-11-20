@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - main
+      - lab-1
 
 jobs:
   deploy_hosting_and_functions:
