@@ -26,7 +26,7 @@ simpleRouter.options('/api/test', (req, res, payload) => {
     method: req.method,
     url: req.url,
     message: 'OPTIONS /api/test works!',
-    payload
+    payload,
   });
 });
 simpleRouter.get('/api/test/test2', (req, res) => {
@@ -44,7 +44,7 @@ export const router = functions.https.onRequest(async (request, response) => {
   } catch (e) {
     response.status(500).json({
       error: 'Internal error',
-      details: e.message
+      details: e.message,
     });
   }
 });
