@@ -36,6 +36,3 @@ jobs:
 
       - name : Deploy functions
         run: npm run deploy:token ${{ secrets.GCLOUD_TOKEN }}
-
-      - name : Preview hosting
-        run: npm run preview:token ${{ secrets.GCLOUD_TOKEN }}
