@@ -1,0 +1,44 @@
+{
+  "name": "nodejs-labs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "functions/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "lint": "npm run --workspaces --if-present lint",
+    "lint:fix": "npm run --workspaces --if-present lint:fix",
+    "format": "npm run --workspaces --if-present format",
+    "format:fix": "npm run --workspaces --if-present format:fix",
+    "build": "npm run --workspaces --if-present build",
+    "deploy": "firebase deploy",
+    "deploy:token": "firebase deploy --token",
+    "preview": "firebase hosting:channel:deploy preview --expires 30d",
+    "preview:token": "firebase hosting:channel:deploy preview --expires 30d --token",
+    "run": "firebase emulators:start"
+  },
+  "workspaces": [
+    "functions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ILabiak/nodejs-labs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ILabiak/nodejs-labs/issues"
+  },
+  "homepage": "https://github.com/ILabiak/nodejs-labs#readme",
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^27.1.2",
+    "eslint-plugin-sonarjs": "^0.16.0",
+    "firebase": "^9.11.0",
+    "firebase-functions": "^3.24.1",
+    "firebase-tools": "^11.14.4",
+    "jest": "^29.1.2",
+    "prettier": "2.7.1"
+  }
+}
